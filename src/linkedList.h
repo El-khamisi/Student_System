@@ -9,6 +9,9 @@
 #include "../global.h"  
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 
 
@@ -21,10 +24,10 @@
 
 
 //A Single Node structure
-typedef struct linkedNode
+typedef struct LinkedNode
 {
     struct LinkedNode *next;
-    int ID; 
+    int ID;
     char *name;
     char *pass;
     int year;
@@ -33,7 +36,7 @@ typedef struct linkedNode
 
 
 //Structure of linkedList
-typedef struct linked_List
+typedef struct
 {
     Node *root;
     int size ;
@@ -47,10 +50,10 @@ typedef struct linked_List
 void initList(linkedList *pt);
 
 //Add Element  to a list
-void insertList(linkedList *pt, Node *e);
+void insertList(linkedList *pt, int ID, char *name, char *pass, int year);
 
 //Delet Element to a list return 0 if failure
-int deleteNode(linkedList *pt,  Node *e);
+int deleteNode(linkedList *pt,  int ID);
 
 //Clear all elements form a list
 void clearList(linkedList *pt);
@@ -69,6 +72,8 @@ Node *search(linkedList *pt, int ID);
 
 
 
+
+void travers(linkedList *pt, void (*pf)(Node *));
 
 
 
