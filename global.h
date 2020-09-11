@@ -8,6 +8,7 @@
 #include "src/linkedList.h"
 #include "src/admin.h"
 #include "src/user.h"
+#include "src/check.h"
 
 
 #define MAX 2
@@ -16,8 +17,8 @@
 char *arr[MAX];
 
 
-
-
+//Set admin user and password
+char admin_name[12] = "admin", admin_pass[12] = "1234";
 
 
 
