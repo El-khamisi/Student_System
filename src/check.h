@@ -14,7 +14,7 @@
 
 
 //Check the ID of the student 
-int student();
+void student();
 
 //Check admin informations
 void admin();

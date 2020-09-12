@@ -2,7 +2,7 @@
 
 
 
-int student()
+void student()
 {
 	int ID;
 	char Pass[12];
