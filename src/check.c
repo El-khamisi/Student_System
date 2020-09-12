@@ -7,14 +7,14 @@ void student()
 	int ID;
 	char Pass[12];
 	char *student_Pass = Pass;
-	node *node_ptr, node *ptr;
+	Node *node_ptr;
 	
 	// Take The ID from the student
 	printf("Enter your ID : ");
 	scanf("%d", &ID);
 	
 	//Search the ID
-	node_ptr = search(ptr, ID);
+	node_ptr = search(&list, ID);
 	if (node_ptr == NULL)
 	{
 		printf("Wrong ID ..!\n");
@@ -26,12 +26,12 @@ void student()
 		scanf("%s", student_Pass);
 		
 		//Check the password
-		if (student_Pass == node_ptr->pass)
+		if (strcmp(student_Pass, node_ptr->pass) == 0)
 		{
 			printf("Login successful ..!\n");
 			
 			//Send the ID
-			findUser(ID);
+			findUser(node_ptr);
 		}
 		else 
 		{
@@ -88,7 +88,7 @@ int check_admin_username()
 		}
 		else{
 			printf("Attemps are limit ! Try again later ..!");
-			exit(0);
+			return 0;
 		}
 	}
 }
@@ -116,7 +116,7 @@ int check_admin_password()
 		}
 		else{
 			printf("Attemps are limit ! Try again later ..!");
-			exit(0);
+			return 0;
 		}
 	}
 }
