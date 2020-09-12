@@ -20,10 +20,10 @@ int student();
 void admin();
 
 //Check admin username
-int check_admin_username()
+int check_admin_username();
 
 //Check admin password
-int check_admin_password()
+int check_admin_password();
 
 
 #endif   //CHECK_H
