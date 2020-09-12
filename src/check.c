@@ -21,8 +21,14 @@ void admin()
 {
 	int check_user, check_pass;
 	
+	//Set attemps count to 0 to calculate how many times the user enter wrong information
+	attemps_count = 0;
+	
 	check_user = check_admin_username();
 	if (check_user == 1){
+		
+		//Set attemps count to 0 again
+		attemps_count = 0;
 		
 		check_pass = check_admin_password();
 		if (check_pass == 1){
@@ -38,19 +44,28 @@ void admin()
 int check_admin_username()
 {
 	char username[12];
+	char *username_ptr = username;
 	
 	printf("Enter your username : ");
-	scanf("%s", username);
+	scanf("%s", username_ptr);
 	
 	//Compare the username entered by the admin with the stored username
-	if (strcmp(username, admin_name) == 0)
+	if (strcmp(username_ptr, admin_details[0]) == 0)
 		return 1;
 	else 
 	{
 		printf("Wrong username ..! Enter username again.\n");
 		
 		//Call check_admin_username function again if the username is wrong
-		check_admin_username();
+		//Terminate if the username is wrong 3 times
+		if (attemps_count < 2){
+			attemps_count++;
+			check_admin_username();
+		}
+		else{
+			printf("Attemps are limit ! Try again later ..!");
+			exit(0);
+		}
 	}
 }
 
@@ -58,18 +73,26 @@ int check_admin_username()
 int check_admin_password()
 {
 	char password[12];
+	char *pass = password;
 	
 	printf("Enter your password : ");
-	scanf("%s", password);
+	scanf("%s", pass);
 	
 	// Compare the password entered by the admin with the stored password
-	if (strcmp(password, admin_pass) == 0)
+	if (strcmp(pass, admin_details[1]) == 0)
 		return 1;
 	else 
 	{
 		printf("Wrong password ..! Enter password again.\n");
 		
 		// Call check_admin_password function again if the password is wrong
-		check_admin_password();
+		if (attemps_count < 2){
+			attemps_count++;
+			check_admin_password();
+		}
+		else{
+			printf("Attemps are limit ! Try again later ..!");
+			exit(0);
+		}
 	}
 }
