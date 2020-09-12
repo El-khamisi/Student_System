@@ -13,6 +13,9 @@
 
 #define MAX 2
 
+//Initialize Linked list
+linkedList list;
+
 //Initialize Admin name and password
 char *admin_details[MAX] = {"admin", "1234"};
 
