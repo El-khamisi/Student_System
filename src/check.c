@@ -30,8 +30,8 @@ void student()
 		{
 			printf("Login successful ..!\n");
 			
-			//Send pointer to the node
-			
+			//Send the ID
+			findUser(ID);
 		}
 		else 
 		{
