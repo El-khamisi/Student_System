@@ -3,7 +3,7 @@
 #include "linkedList.h"
 
 
-void operations(void)
+void operations(linkedList* ptr)
 {
 	while (1)
 	{
@@ -13,19 +13,19 @@ void operations(void)
 		switch (choice)
 		{
 			case 1:
-				add_student();
+				add_student(ptr);
 				break;
 			case 2:
-				delete_student();
+				delete_student(ptr);
 				break;
 			case 3:
-				edit_student();
+				edit_student(ptr);
 				break;
 			case 4:
-				show_record();
+				show_student(ptr);
 				break;
 			case 5:
-				show_AllRecords();
+				show_AllRecords(ptr);
 				break;
 			default :
 				printf ("your input is wrong to terminate press 0 otherwise press any button :");
@@ -36,12 +36,12 @@ void operations(void)
 }
 
 
-void add_student ()
+void add_student (linkedList* ptr)
 {
 
 	char name[20],PW[10];
 	int id;
-	float GPA ;
+	int year ;
 
 	printf ("enter the name of the student(max 19 chars): ");
 	scanf ("%s",name);
@@ -49,14 +49,44 @@ void add_student ()
 	scanf ("%d",id);
 	printf("enter the password (max 9 chars): ");
 	scanf ("%s",PW);
-	printf ("enter GPA : ");
-	scanf ("%f",&GPA);
+	printf ("enter year : ");
+	scanf ("%d",&year);
 
-	add_record(name, PW, id, GPA);
+	insertList(ptr ,id ,name ,PW ,year);
 
 }
 
-int add_record (char* name,char* PW,int id,float GPA)
+void delete_student(linkedList* ptr );
 {
+	int id;
+	printf ("enter the ID: ");
+	scanf("%d",ID);
 	
-} 
+	deleteNode(ptr , id);
+	
+}
+
+void edit_student (linkedList* ptr)
+{
+	int id;
+	printf ("enter the ID: ");
+	scanf("%s",ID);
+	
+	deleteNode(ptr , id);
+	add_student(ptr);
+}
+
+void show_student (linkedList* ptr)
+{
+	int id;
+	node*Node_ptr;
+	printf("enter the ID: ");
+	scanf("%d",&id);
+	node_ptr=search(ptr,id);
+	if (node_ptr==NULL) 
+	{
+		printf ("ID not found ");
+	}
+	else
+	printf ("name :%s\nPW :%s\nID :%d\nyear :%d",node_ptr->name,node_ptr->pass,node_ptr->ID,node_ptr->year);
+}
