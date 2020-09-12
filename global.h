@@ -14,13 +14,10 @@
 #define MAX 2
 
 //Initialize Admin name and password
-char *arr[MAX];
+char *admin_details[MAX] = {"admin", "1234"};
 
-
-//Set admin user and password
-char admin_name[12] = "admin", admin_pass[12] = "1234";
-
-
+//Initialize a variable to count number of attemps to login
+int attemps_count;
 
 //Check validity of ID
 int checkID(int ID);
