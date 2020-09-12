@@ -7,13 +7,37 @@ int student()
 	int ID;
 	char Pass[12];
 	char *student_Pass = Pass;
+	node *node_ptr, node *ptr;
 	
 	// Take The ID from the student
 	printf("Enter your ID : ");
 	scanf("%d", &ID);
-	// Search ID
 	
-	
+	//Search the ID
+	node_ptr = search(ptr, ID);
+	if (node_ptr == NULL)
+	{
+		printf("Wrong ID ..!\n");
+	}
+	else 
+	{
+		// Take the password from the student
+		printf("Enter your password : ");
+		scanf("%s", student_Pass);
+		
+		//Check the password
+		if (student_Pass == node_ptr->pass)
+		{
+			printf("Login successful ..!\n");
+			
+			//Send pointer to the node
+			
+		}
+		else 
+		{
+			printf("Wrong Password ..!\n");
+		}
+	}
 }
 
 //Check admin informations
@@ -32,7 +56,7 @@ void admin()
 		
 		check_pass = check_admin_password();
 		if (check_pass == 1){
-			printf("Login sucessful ..!\n");
+			printf("Login successful ..!\n");
 			
 			//Call admin panel
 			operations();
