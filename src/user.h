@@ -21,7 +21,7 @@
 
 
 //receive Existing ID Then Search in dataBase 
-void findUser(int ID);
+void findUser(Node *node_ptr);
 
 //Test if ID is Valid, Then retrun 1, 0 otherwise 
 int isValid(int ID);
