@@ -70,7 +70,7 @@ void edit_student (linkedList* ptr)
 {
 	int id;
 	printf ("enter the ID: ");
-	scanf("%s",ID);
+	scanf("%s",id);
 	
 	deleteNode(ptr , id);
 	add_student(ptr);
@@ -79,7 +79,7 @@ void edit_student (linkedList* ptr)
 void show_student (linkedList* ptr)
 {
 	int id;
-	node*Node_ptr;
+	Node *node_ptr;
 	printf("enter the ID: ");
 	scanf("%d",&id);
 	node_ptr=search(ptr,id);

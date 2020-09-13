@@ -13,7 +13,7 @@
 
 #define MAX 2
 
-//Initialize Linked list
+//Declaration Linked list
 linkedList list;
 
 //Initialize Admin name and password
