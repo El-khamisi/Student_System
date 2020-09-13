@@ -1,42 +1,14 @@
 #ifndef ADMIN_H
 #define ADMIN_H
 
-
-// Global Header
-/*
-#include "../global.h"  
-*/
-
-
-
-
-
-
-
-
-
-
-//receive ID, StudentName, StudentPassword, and Year.
-//Then Try to addNewRecord and return 1 if success, 0 otherwise
-int addRecord(int ID,char *name, char *pass, int year);
-
-//receive ID
-//Then Try to remove Existing Record and return 1 if success, 0 otherwise
-int removeRecord(int ID);
-
-//receive ID
-//Try to editExistingRecord and return 1 if success, 0 otherwise
-int editRecord(int ID);
-
-//receive ID
-//Try to viewExistingRecord and return 1 if success, 0 otherwise
-int viewRecord(int ID);
-
-
-
-
-
-
+extern char admin_PW;
+void admin_operations(linkedList* ptr);
+void add_student (linkedList* ptr);
+void delete_student(linkedList* ptr );
+void edit_student (linkedList* ptr);
+void show_student (linkedList* ptr);
+void show_AllRecords (linkedList* ptr);
+void change_PW_admin();
 
 
 #endif   //ADMIN_H
