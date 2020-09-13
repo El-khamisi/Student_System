@@ -7,7 +7,7 @@ void operations(linkedList* ptr)
 {
 	while (1)
 	{
-		char choice;
+		int choice;
 		printf ("choose an operation :\n1.add student\n2.delete student\n3.edit student\n4.show record\n5.show all record\nyour choice :");
 		scanf ("%d",&choice);
 		switch (choice)
@@ -60,7 +60,7 @@ void delete_student(linkedList* ptr );
 {
 	int id;
 	printf ("enter the ID: ");
-	scanf("%d",ID);
+	scanf("%d",id);
 	
 	deleteNode(ptr , id);
 	
