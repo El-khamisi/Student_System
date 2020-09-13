@@ -90,3 +90,14 @@ void show_student (linkedList* ptr)
 	else
 	printf ("name :%s\nPW :%s\nID :%d\nyear :%d",node_ptr->name,node_ptr->pass,node_ptr->ID,node_ptr->year);
 }
+
+void show_AllRecords (linkedList* ptr)
+{
+	travers(ptr,show_student);
+} 
+
+void change_PW_admin()
+{
+	printf ("enter new password:");
+	scanf ("%s",admin_PW);
+}
