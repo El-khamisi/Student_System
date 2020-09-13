@@ -31,7 +31,7 @@ void student()
 			printf("Login successful ..!\n");
 			
 			//Send the ID
-			findUser(node_ptr);
+			operations_student(node_ptr);
 		}
 		else 
 		{

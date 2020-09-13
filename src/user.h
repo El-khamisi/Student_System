@@ -6,6 +6,7 @@
 #include "../global.h"  
 */
 #include "linkedList.h"
+#include "check.h"
 
 
 
@@ -18,21 +19,14 @@
 
 
 
+//To choose which operation what user want..
+void operations_student(Node *node_ptr);
 
+//To show record..
+void ShowRecord(Node *ptr);
 
-//receive Existing ID Then Search in dataBase 
-void findUser(Node *node_ptr);
-
-//Test if ID is Valid, Then retrun 1, 0 otherwise 
-int isValid(int ID);
-
-//receive Existing ID and Try to view Existing Record. Then return 1 if success, 0 otherwise
-int viewRecord(int ID);
-
-//receive ID for Existing ID, old password new password. 
-//Then Try to Edit Password and return 0 if failed, 1 otherwise
-int editPass(int ID, char *old,char *neww);
-
+//To Edit password..
+void Edit_password(Node *ptr);
 
 
 
