@@ -42,9 +42,8 @@ void Edit_password(Node *ptr){
 	//code..
 	//fun.check pass and bus the address...
 	char password[11];
-	char *pp=password;
 	printf("Enter New password");
-	scanf("%s", pp);
-	ptr->pass=pp; 
+	scanf("%s", password);
+	ptr->pass=password; 
 	printf("Password changed successfully!");
 }
