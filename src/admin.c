@@ -2,6 +2,7 @@
 #include "admin.h"
 
 
+
 void admin_operations(linkedList* ptr)
 {
 	while (1)
@@ -108,8 +109,11 @@ void show_AllRecords (linkedList* ptr)
 
 void change_PW_admin()
 {
+	
+	char temp[11];
 	printf ("enter new password:");
-	scanf ("%s",admin_PW);
+	scanf ("%s",temp);
+	strcpy(admin_details[1],temp);
 }
 
 
