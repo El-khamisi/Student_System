@@ -4,38 +4,50 @@
 
 void student()
 {
+
 	int ID;
 	char Pass[12];
-	char *student_Pass = Pass;
+	int choice;
+
+	//char *student_Pass = Pass;
 	Node *node_ptr;
-	
 	// Take The ID from the student
-	printf("Enter your ID : ");
-	scanf("%d", &ID);
-	
-	//Search the ID
-	node_ptr = search(&list, ID);
-	if (node_ptr == NULL)
+	while (1)
 	{
-		printf("Wrong ID ..!\n");
+			printf("Enter your ID : ");
+			scanf("%d", &ID);
+		
+			//Search the ID
+			node_ptr = search(&list, ID);
+			if (node_ptr == NULL)
+			{
+				printf("Wrong ID ..!\n press 0 to terminate otherwise press anykey :");
+				scanf ("%d",&choice);
+				if (choice==0) return;
+			}
+			else break;
 	}
-	else 
+	while (1)
 	{
 		// Take the password from the student
 		printf("Enter your password : ");
-		scanf("%s", student_Pass);
+		scanf("%s", Pass);
 		
 		//Check the password
-		if (strcmp(student_Pass, node_ptr->pass) == 0)
+		if (strcmp(Pass, node_ptr->pass) == 0)
 		{
 			printf("Login successful ..!\n");
 			
-			//Send the ID
 			operations_student(node_ptr);
+			//Send the ID
+			return;
 		}
 		else 
 		{
-			printf("Wrong Password ..!\n");
+			printf("Wrong Password ..!\npress 0 to terminate otherwise press anykey :");
+			scanf("%d",&choice);
+			if (choice==0) break;
+			
 		}
 	}
 }
@@ -68,13 +80,12 @@ void admin()
 int check_admin_username()
 {
 	char username[12];
-	char *username_ptr = username;
 	
 	printf("Enter your username : ");
-	scanf("%s", username_ptr);
+	scanf("%s", username);
 	
 	//Compare the username entered by the admin with the stored username
-	if (strcmp(username_ptr, admin_details[0]) == 0)
+	if (strcmp(username, admin_details[0]) == 0)
 		return 1;
 	else 
 	{
