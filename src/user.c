@@ -7,6 +7,7 @@ void operations_student(Node *node_ptr)
 	printf("Enter a choice what U want: \n");
 	printf("press 1 to Show your record\n");
 	printf("press 2 to Edit your password");
+	scanf("%d",&choice);
 	switch(choice)
 	{
 		case 1:
@@ -23,16 +24,27 @@ void operations_student(Node *node_ptr)
 
 //To show record..
 void ShowRecord(Node *ptr){
-	while(ptr != NULL)
+	/* while(ptr != NULL)
 	{
-		printf("The record of selected student is:%s\t\t%d\t\t%d\t\t%s\n",ptr->name,ptr->year,ptr->Id,ptr->password);
+		printf("The record of selected student is:%s\t\t%d\t\t%d\t\t%s\n",ptr->name,ptr->year,ptr->ID,ptr->pass);
+	} */
+	if (ptr == NULL) 
+	{
+		printf("The ID you have Entered Not Found...!\n");
+	}
+	else{
+		printr(ptr);	
 	}
 
+}
 //To Edit password..
 void Edit_password(Node *ptr){
 	//code..
 	//fun.check pass and bus the address...
+	char password[11];
+	char *pp=password;
 	printf("Enter New password");
-	scanf("%s", ptr->passward); 
+	scanf("%s", pp);
+	ptr->pass=pp; 
 	printf("Password changed successfully!");
 }

@@ -72,7 +72,7 @@ Node *search(linkedList *pt, int ID);
 
 
 
-
+//Travers linkedList Nodes to external uses
 void travers(linkedList *pt, void (*pf)(Node *));
 
 

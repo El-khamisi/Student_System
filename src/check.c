@@ -59,7 +59,7 @@ void admin()
 			printf("Login successful ..!\n");
 			
 			//Call admin panel
-			operations();
+			admin_operations(&list);
 		}
 	}
 }
@@ -87,7 +87,7 @@ int check_admin_username()
 			check_admin_username();
 		}
 		else{
-			printf("Attemps are limit ! Try again later ..!");
+			printf("Attempts limit exceeded ! Try again later ..!");
 			return 0;
 		}
 	}
@@ -115,7 +115,7 @@ int check_admin_password()
 			check_admin_password();
 		}
 		else{
-			printf("Attemps are limit ! Try again later ..!");
+			printf("Attempts limit exceeded ! Try again later ..!");
 			return 0;
 		}
 	}

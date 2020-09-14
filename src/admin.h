@@ -1,7 +1,23 @@
 #ifndef ADMIN_H
 #define ADMIN_H
 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "linkedList.h"
+
+
+
 extern char admin_PW;
+
+
+
+
+
+
+
+
+
 void admin_operations(linkedList* ptr);
 void add_student (linkedList* ptr);
 void delete_student(linkedList* ptr );

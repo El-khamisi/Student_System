@@ -37,6 +37,7 @@ int checkAdmin(char *name, char *pass);
 int changePass(char *name, char *old,char *neww);
 
 
+void printr(Node *node_ptr);
 
 
 
