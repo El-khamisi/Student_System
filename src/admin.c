@@ -10,7 +10,9 @@ void admin_operations(linkedList* ptr)
 		int choice;
 		printf ("choose an operation :\n\\
 		1.add student\t2.delete student\t3.edit student\n\\
-		\t4.show record\t5.show all records\nyour choice :");
+		\t4.show record\t5.show all records\n 6. channge password your choice :");
+
+
 		scanf ("%d",&choice);
 		switch (choice)
 		{
@@ -29,10 +31,11 @@ void admin_operations(linkedList* ptr)
 			case 5:
 				show_AllRecords(ptr);
 				break;
+			case 6 :
+			change_PW_admin();
 			default :
-				printf ("your input is wrong to terminate press 0 otherwise press any button :");
-				scanf ("%d",&choice);
-				if (!choice) return 0;
+				printf("Enter Valid Number \n");
+
 		}
 	}	
 }
@@ -45,11 +48,11 @@ void add_student (linkedList* ptr)
 	int id, year ;
 
 	printf ("enter the name of the student(max 20 chars): ");
-	scanf ("%s",name);
+	scanf ("%20s",name);
 	printf ("enter student's ID:");
 	scanf ("%d",&id);
 	printf("enter the password (max 10 chars): ");
-	scanf ("%s",PW);
+	scanf ("%10s",PW);
 	printf ("enter year : ");
 	scanf ("%d",&year);
 
@@ -112,7 +115,7 @@ void change_PW_admin()
 	
 	char temp[11];
 	printf ("enter new password:");
-	scanf ("%s",temp);
+	scanf ("%10s",temp);
 	strcpy(admin_details[1],temp);
 }
 

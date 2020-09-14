@@ -8,7 +8,6 @@
 
 
 
-extern char admin_PW[11];
 
 
 
