@@ -18,11 +18,10 @@ int main(void)
     while (1)
     {
         // read a number form user to Login to System
-        int choose;
+        int choose = 1000000;
 		
 		printf("Welcome ..!\nChoose your account type to login (0 to terminate) :\n1) Student\t2)Admin : ");
-        scanf("%d", &choose);
-
+        scanf("%d", &choose);getchar();
         switch ( choose )
         {
 			
@@ -41,7 +40,7 @@ int main(void)
 				
 			default:
 				printf("Choose a correct number ..! (0 to terminate)\n");
-				break;
+				
 		}
     }
 

@@ -20,7 +20,7 @@ void insertList(linkedList *pt, int ID, char *name, char *pass, int year){
     
     pn->ID=ID;
     pn->name=pname;
-    pn->pass=pass;
+    pn->pass=ppass;
     pn->year=year;
     pn->next=pt->root;
     pt->root=pn;
@@ -36,6 +36,7 @@ int deleteNode(linkedList *pt,  int ID){
         if(i->ID == ID){
             if (i == pt->root)pt->root=i->next;
             pre->next = i->next;
+            free(i->name);free(i->pass);
             free(i);
             pt->size--;
             return 1;

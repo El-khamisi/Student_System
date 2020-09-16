@@ -1,15 +1,20 @@
 
 #include "admin.h"
 
+char admin_details[MAX][6] = {"admin", "1234"};
 
 
 void admin_operations(linkedList* ptr)
 {
 	while (1)
 	{
-		int choice;
-		printf ("choose an operation :\n1.add student\n2.delete student\n3.edit student\n4.show record\n5.show all records\n6.change the password\n7.terminate operations\nyour choice :");
-		scanf ("%d",&choice);
+		int choice = 1000000;
+		printf ("choose an operation :\n\
+		1.Add student\t2.Delete student\t3.Edit student\n\
+		4.Show record\t5.Show all Records\t6.Channge password\n\
+		\t\t7.Terminate operations\nYour choice: ");
+
+		scanf ("%d",&choice);getchar();
 		switch (choice)
 		{
 			case 1:
@@ -34,7 +39,7 @@ void admin_operations(linkedList* ptr)
 					return;
 			default :
 				printf ("your input is wrong to terminate press 0 otherwise press any button :");
-				scanf ("%d",&choice);
+				scanf ("%d",&choice);getchar();
 				if (!choice) return;
 		}
 	}	
@@ -47,7 +52,7 @@ void add_student (linkedList* ptr)
 	char name[21],PW[11];
 	int id, year ;
 
-	printf ("enter the name of the student(max 20 chars): ");
+	printf ("Enter the name of the student(max 20 chars): ");
 	scanf ("%20s",name);
 	printf ("enter student's ID:");
 	scanf ("%d",&id);
@@ -82,47 +87,54 @@ void edit_student (linkedList* ptr)
 {
 	int id;
 	int choice;
+	Node *nodePtr ;
+
 	while (1)
 	{
-		printf ("enter the ID: ");
+		printf ("Enter the ID: ");
 		scanf("%d",&id);
-		Node* nodePtr =search(ptr,id);
+		nodePtr = search(ptr,id);
 		if (nodePtr==NULL) 
 		{
-			printf ("the ID is not found to terminate press 0 otherwise press any button :");
-			scanf ("%d",&choice);
-			if (choice==0)return;
+			printf ("the ID is not found to terminate press 0 otherwise press any button :\n");
+			scanf ("%d",&choice);getchar();
+			if (!choice)return;
 		}
 		else break;
 	}
 	while (1)
 	{
-		printf ("1.change the name\n2.change the password\n3.change year\nyour choice :");
-		scanf ("%d",&choice);
+		char name[21];
+		char PW[11];
+		int year;
+		printf ("\t\t1.change the name\n\
+		2.change the password\n\
+		3.change year\nYour choice : ");
+		scanf ("%d",&choice);getchar();
 		switch (choice)
 		{
 			case 1:
-				char name[21];
-				printf ("enter the new name :");
+				
+				printf ("Enter the new name :");
 				scanf ("%20s",name);
-				stpcpy(nodePtr->name,name);
+    			strcpy(nodePtr->name, name);
 				return;
 			case 2:
-				char PW[11];
-				printf ("enter the new password:");
+				
+				printf ("Enter the new password:");
 				scanf ("%10s",PW);
-				stpcpy(nodePtr->pass,PW);
+    			strcpy(nodePtr->pass, PW);
 				return;
 			case 3:
-				int year;
+				
 				printf ("enter the year: ");
 				scanf ("%d",&year);
-				noePtr->year=year;
+				nodePtr->year=year;
 				return;
 			default :
 				printf ("wrong choice press 0 to terminate otherwise press any key :");
-				scanf ("%d",&choice);
-				if (choice==0) return;
+				scanf ("%d",&choice);getchar();
+				if (!choice) return;
 		}
 	}
 }
@@ -131,8 +143,9 @@ void show_student (linkedList* ptr)
 {
 	int id;
 	Node *node_ptr;
-	printf("enter the ID: ");
+	printf("Enter the ID: ");
 	scanf("%d",&id);
+	printf("\n");	
 	node_ptr = search(ptr,id);
 	if (node_ptr == NULL) 
 	{
@@ -146,20 +159,22 @@ void show_student (linkedList* ptr)
 
 void show_AllRecords (linkedList* ptr)
 {
+	printf("\n");	
 	travers(ptr,printr);
+	printf("\n");	
 } 
 
 void change_PW_admin()
 {
 	
 	char temp[11];
-	printf ("enter new password:");
-	scanf ("%s",temp);
+	printf ("Enter new password:");
+	scanf ("%10s",temp);
 	strcpy(admin_details[1],temp);
 }
 
 
 void printr(Node *node_ptr){
-	printf ("Name : %-20s| Password :%-10s|ID :%d|year :%d\n",
+	printf ("--> Name : %-20s| Password :%-10s|ID :%-10d|year :%d\n",
 		node_ptr->name,node_ptr->pass,node_ptr->ID,node_ptr->year);
 }

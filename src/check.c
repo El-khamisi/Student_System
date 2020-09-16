@@ -21,8 +21,8 @@ void student()
 			if (node_ptr == NULL)
 			{
 				printf("Wrong ID ..!\n press 0 to terminate otherwise press anykey :");
-				scanf ("%d",&choice);
-				if (choice==0) return;
+				scanf ("%d",&choice);getchar();
+				if (!choice) return;
 			}
 			else break;
 	}
@@ -44,8 +44,8 @@ void student()
 		else 
 		{
 			printf("Wrong Password ..!\npress 0 to terminate otherwise press anykey :");
-			scanf("%d",&choice);
-			if (choice==0) break;
+			scanf("%d",&choice);getchar();
+			if (!choice) break;
 			
 		}
 	}
@@ -107,13 +107,13 @@ int check_admin_username()
 int check_admin_password()
 {
 	char password[12];
-	char *pass = password;
+	
 	
 	printf("Enter your password : ");
-	scanf("%s", pass);
+	scanf("%s", password);
 	
 	// Compare the password entered by the admin with the stored password
-	if (strcmp(pass, admin_details[1]) == 0)
+	if (strcmp(password, admin_details[1]) == 0)
 		return 1;
 	else 
 	{
