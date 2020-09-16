@@ -3,13 +3,6 @@
 
 
 #include "../global.h"  
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "linkedList.h"
-#include "user.h"
-#include "admin.h"
-
 
 
 

@@ -2,11 +2,8 @@
 #define USER_H
 
 // Global Header
-/*
 #include "../global.h"  
-*/
-#include "linkedList.h"
-#include "check.h"
+
 
 
 

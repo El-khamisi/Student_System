@@ -17,7 +17,6 @@
 linkedList list;
 
 //Initialize Admin name and password
-char *admin_details[MAX] = {"admin", "1234"};
 
 //Initialize a variable to count number of attemps to login
 int attemps_count;

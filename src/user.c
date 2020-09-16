@@ -1,6 +1,7 @@
 #include "user.h"
-
 //To choose which operation what user want..
+extern char admin_details[MAX][6];
+
 void operations_student(Node *node_ptr)
 {
 	int choice;

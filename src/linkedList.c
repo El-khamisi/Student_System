@@ -13,12 +13,17 @@ void initList(linkedList *pt){
 //Add Element  to a list
 void insertList(linkedList *pt, int ID, char *name, char *pass, int year){
     Node *pn=(Node *)malloc(sizeof(Node));
-   pn->ID=ID;
-   pn->name=name;
-   pn->pass=pass;
-   pn->year=year;
-   pn->next=pt->root;
-   pt->root=pn;
+    char *pname = (char *)malloc(sizeof(strlen(name)));
+    char *ppass = (char *)malloc(sizeof(strlen(pass)));
+    strcpy(pname, name);
+    strcpy(ppass, pass);
+    
+    pn->ID=ID;
+    pn->name=pname;
+    pn->pass=pass;
+    pn->year=year;
+    pn->next=pt->root;
+    pt->root=pn;
 
 
    pt->size++;

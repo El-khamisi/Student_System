@@ -1,6 +1,7 @@
 
 #include "admin.h"
 
+char admin_details[MAX][6] = {"admin", "1234"};
 
 
 void admin_operations(linkedList* ptr)
@@ -8,8 +9,8 @@ void admin_operations(linkedList* ptr)
 	while (1)
 	{
 		int choice;
-		printf ("choose an operation :\n\\
-		1.add student\t2.delete student\t3.edit student\n\\
+		printf ("choose an operation :\n\
+		1.add student\t2.delete student\t3.edit student\n\
 		\t4.show record\t5.show all records\n 6. channge password your choice :");
 
 
@@ -48,7 +49,7 @@ void add_student (linkedList* ptr)
 	int id, year ;
 
 	printf ("enter the name of the student(max 20 chars): ");
-	scanf ("%20s",name);
+	scanf ("%20s",name); 
 	printf ("enter student's ID:");
 	scanf ("%d",&id);
 	printf("enter the password (max 10 chars): ");
@@ -121,6 +122,6 @@ void change_PW_admin()
 
 
 void printr(Node *node_ptr){
-	printf ("Name : %-20s| Password :%-10s|ID :%d|year :%d\n",
+	printf ("Name : %s| Password :%-10s|ID :%d|year :%d\n",
 		node_ptr->name,node_ptr->pass,node_ptr->ID,node_ptr->year);
 }

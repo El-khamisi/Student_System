@@ -1,6 +1,5 @@
 #include "check.h"
-
-
+extern char admin_details[MAX][6];
 
 void student()
 {

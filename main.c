@@ -3,6 +3,7 @@
 
 
 
+extern char admin_details[MAX][6];
 
 
 
@@ -11,6 +12,7 @@
 
 int main(void)
 {
+	
 	initList(&list);
 
     while (1)
